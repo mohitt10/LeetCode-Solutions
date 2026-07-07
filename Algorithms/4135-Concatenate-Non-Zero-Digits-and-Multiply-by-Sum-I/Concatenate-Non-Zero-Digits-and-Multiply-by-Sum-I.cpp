@@ -1,16 +1,17 @@
 class Solution {
 public:
     long long sumAndMultiply(int n) {
-        long long s = 0;
-        string ss;
+        long long s = 0, num = 0;
+        int dig = 0;
         while(n) {
-            int d = n % 10;
+            int d = n % 10; 
             s += d;
-            char j = d + '0';
-            if(d != 0) ss = j + ss;
+            if(d != 0) {
+                num = d * pow(10, dig) + num;
+                dig++;
+            }
             n /= 10;
         }
-        if(ss == "") return 0;
-        return stoll(ss) * s;
+        return s * num;
     }
 };
