@@ -10,7 +10,7 @@ public:
         while((r - l) > 1e-5) {
             m = (r - l) / 2 + l;
             double LeftS = 0, RightS = 0;
-            for(auto &sq : squares) {
+            for(const auto &sq : squares) {
                 double y = sq[1], l = sq[2];
                 if(m > y) {
                     if(m > y + l) LeftS += l * l;
